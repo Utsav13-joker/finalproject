@@ -1,0 +1,15 @@
+{% extends "fyp/base.html" %}
+{% block content %}
+	{% for payment in payments %}
+		<article class="media content-section">
+  			<div class="media-body">
+    		<div class="article-metadata">
+     	 <a class="mr-2" href="#">{{ payment.customer }}</a>
+      <small class="text-muted">{{ payment.date_of_payment|date:"F d, Y" }}</small>
+    </div>
+    	<h2><a class="article-title" href="#">{{ payment.title }}</a></h2>
+   	 <p class="article-content">{{ payment.amount }}</p>
+  		</div>
+		</article>
+	{% endfor %}
+	{% endblock content %}
